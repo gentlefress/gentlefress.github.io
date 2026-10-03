@@ -21,6 +21,15 @@ The active publication component supports `paperUrl` for direct PDFs and
 publisher links, in addition to the existing arXiv and project homepage links.
 Changed JavaScript chunks use new filenames so browsers load the updated code.
 
+## WeChat contact
+
+The profile's WeChat icon opens the original QR image in a native dialog.
+[`assets/wechat-contact.js`](assets/wechat-contact.js) handles opening, closing,
+and keyboard focus. [`assets/wechat-qr.jpg`](assets/wechat-qr.jpg) is the uploaded
+image, copied without editing. Replace it when the contact QR code changes.
+The `wechat_qr` social field enables the icon; keep the HTML and Flight data
+in sync when changing it.
+
 ## Visitor counter
 
 The homepage's profile sidebar displays `Visitors`, `10/2000`, and
