@@ -62,7 +62,8 @@ def render(papers, figures):
                 authors.append(name)
             short_venue, full_venue = venue(paper)
             parts.append('<p class="pub-authors">' + ', '.join(authors) + '</p>')
-            parts.append(f'<p class="pub-venue" title="{escape(full_venue)}">{escape(short_venue)} {year}</p>')
+            venue_label = paper.get('venueLabel') or f'{short_venue} {year}'
+            parts.append(f'<p class="pub-venue" title="{escape(full_venue)}">{escape(venue_label)}</p>')
             if paper.get('description'):
                 note = escape(paper['description'])
                 if paper.get('descriptionBold'):
