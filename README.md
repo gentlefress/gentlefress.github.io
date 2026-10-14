@@ -9,8 +9,16 @@ http://localhost:8765. There is no npm build step in this repository.
 
 ## Publications and news
 
-The September 2026 update adds RoboDreamer (CoRL 2026), a paper link for every
-publication, and news for RoboDreamer and the Omega-Home dataset release.
+The homepage displays News followed by Publications, grouped by year. Each paper
+has a framework figure, full author list, venue, contribution notes, and available
+paper/project/code/DOI links. BibTeX expands inline; figures open at full size.
+Education and Experience follow the publication list. The navigation's
+Publications link points to `/#publications`; `/publications/` remains available
+with its searchable list.
+
+The current list contains 20 papers. The TCSS Tucker Fusion and ICASSP Lightweight
+NeRF papers are omitted at the owner's request. ViP uses the owner's supplied
+framework image.
 
 Content exists in both the visible HTML and the Next.js Flight data embedded
 in that HTML. Each route's `index.txt` also contains Flight data used when
@@ -20,6 +28,25 @@ this export, or content may revert after hydration or navigation.
 The active publication component supports `paperUrl` for direct PDFs and
 publisher links, in addition to the existing arXiv and project homepage links.
 Changed JavaScript chunks use new filenames so browsers load the updated code.
+
+### Maintaining the homepage list
+
+- [`publications/index.txt`](publications/index.txt) contains the publication
+  metadata. When changing it, also synchronize the publication route's HTML and
+  embedded Flight data as described above.
+- [`papers/frameworks/sources.json`](papers/frameworks/sources.json) maps paper IDs
+  to local figure files and records the original image or PDF source. Add a figure
+  entry for each new publication.
+- [`assets/home-publications.css`](assets/home-publications.css) defines the layout
+  for desktop, mobile, and dark mode.
+- [`scripts/homepage-component.js`](scripts/homepage-component.js) contains the
+  homepage component inserted into the existing exported JavaScript chunk.
+
+After updating those files, run `python3 scripts/render-home-publications.py`.
+This standard-library-only helper regenerates the homepage publication markup,
+keeps its HTML and Flight data synchronized, and updates the CSS/JavaScript asset
+filenames and their references. Repeating the command leaves the output unchanged.
+Preview both direct page loads and navigation from another route before publishing.
 
 ## WeChat contact
 

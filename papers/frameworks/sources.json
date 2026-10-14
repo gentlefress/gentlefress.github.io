@@ -1,0 +1,142 @@
+{
+  "li2026robodreamer": {
+    "image": "/papers/frameworks/li2026robodreamer.png",
+    "source": "https://arxiv.org/html/2609.07096v2/framework.png",
+    "caption": "Figure 2: Overview of RoboDreamer. Our framework features a Mamba-based training pipeline that uses privileged information and longer historical observations to train a teacher policy via RL, while a student policy is trained with DAgger under stochastic multi-step masking. The temporal backbone enables explicit action chunking and implicit refinement through masked multi-step extrapolation.",
+    "bytes": 406523
+  },
+  "li2026omega0latentpredictiveworld": {
+    "image": "/papers/frameworks/li2026omega0latentpredictiveworld.png",
+    "source": "https://arxiv.org/html/2608.06375v2/framework.png",
+    "caption": "Figure 2: \nOverview of ω\\omega-0.\nWe first train a whole-body VLM for action-aware visual-language representation learning, and then use a joint video-action latent predictor to couple future visual latents with whole-body action generation.\nThe predictor uses prefix-guided dual-query attention with token-specific positional encoding: 2D RoPE for visual prefix tokens, 3D RoPE for future video quer",
+    "bytes": 528757
+  },
+  "shan2026learningphysicalinteractionsurvey": {
+    "image": "/papers/frameworks/shan2026learningphysicalinteractionsurvey.png",
+    "source": "https://arxiv.org/html/2608.07558v1/teaser.png",
+    "caption": "Figure 1: Overview of TF-ART: a unified force/tactile-aware multi-modal multi-phase framework. The main hierarchical architecture includes multimodal perception, encoding and fusion, primary action generation, action refinement, and low-level robot-end control. The branching modules include input data reconstruction, missing-modality prediction, and explicit force-control algorithms.",
+    "bytes": 715467
+  },
+  "yuan2026roboforge": {
+    "image": "/papers/frameworks/yuan2026roboforge.png",
+    "source": "https://arxiv.org/html/2603.17927v2/framework7.png",
+    "caption": "Figure 2: The RoboForge end-to-end framework. The framework is composed of four key modules: (i) Motion Generation module, (ii) Physical Plausibility Optimization Module, (iii) Training Pipeline, and (iv) Sim-to-Real Deployment.",
+    "bytes": 783703
+  },
+  "sun2026mosaic": {
+    "image": "/papers/frameworks/sun2026mosaic.png",
+    "source": "https://arxiv.org/pdf/2602.08594",
+    "page": 4,
+    "figure": 2,
+    "clip": [
+      58,
+      18,
+      553,
+      703
+    ],
+    "caption": "Method framework from Figure 2 of the paper."
+  },
+  "bai2026latentvla": {
+    "image": "/papers/frameworks/bai2026latentvla.png",
+    "source": "https://arxiv.org/html/2602.01166v2/model.png",
+    "caption": "Figure 2: \nOverview of LaRA-VLA. Training proceeds in three stages:\n(i) explicit CoT fine-tuning with aligned visual prediction latents and inverse-dynamics supervision for actions;\n(ii) a curriculum-based transition from explicit CoT to compact text latents, gradually reducing the number of text tokens while increasing reliance on latent reasoning, where the latent representations are also implic",
+    "bytes": 312121
+  },
+  "tan2026robobrain": {
+    "image": "/papers/frameworks/tan2026robobrain.png",
+    "source": "https://arxiv.org/html/2601.14352v1/teasor.png",
+    "caption": "Figure 1: New Features of RoboBrain 2.5. Top: Precise 3D spatial reasoning with depth-aware grounding, metric measuring, and full manipulation trace generation under physical constraints. Bottom: Dense temporal value estimation for step-aware progress/regress prediction from state transitions across viewpoints and tasks; radar plots summarize performance gains on 2D/3D spatial and temporal benchma",
+    "bytes": 1943607
+  },
+  "li2026freestyle": {
+    "image": "/papers/frameworks/li2026freestyle.png",
+    "source": "https://arxiv.org/html/2512.23650v3/RoboPerform_framework_2.png",
+    "caption": "Figure 2: Overview of RoboPerform. We propose a two-stage approach: train an adaptor to inject kinematic information into audio modality, then a Δ\\DeltaMoE teacher policy is trained with RL and a diffusion-based student policy is trained to denoise actions conditioned on audio latent. We propose that motion=content+style. Thus, we fix the motion latent as a constant condition and leverage differen",
+    "bytes": 495204
+  },
+  "li2026language2loco": {
+    "image": "/papers/frameworks/li2026language2loco.png",
+    "source": "https://arxiv.org/html/2510.14952v2/framework.png",
+    "caption": "Figure 2: Overview of RoboGhost. We propose a two-stage approach: a motion latent is first generated, then a MoE-based teacher policy is trained with RL and a diffusion-based student policy is trained to denoise actions conditioned on motion latent. This latent-driven scheme bypasses the need for motion retargeting.",
+    "bytes": 233067
+  },
+  "li2025robomirror": {
+    "image": "/papers/frameworks/li2025robomirror.png",
+    "source": "https://arxiv.org/html/2512.23649v5/RoboMirror_framework_2.png",
+    "caption": "Figure 2: Overview of RoboMirror. It adopts a two-stage framework: initially, it leverages Qwen3-VL to process egocentric or third-person video inputs, generating motion latents through diffusion models with DiT 𝒟θ\\mathcal{D}_{\\theta}. Subsequently, in the policy learning stage, a MoE-based teacher policy is trained with RL, while a diffusion-based student policy learns to denoise actions under th",
+    "bytes": 831659
+  },
+  "bai2025embodiedsurvey": {
+    "image": "/papers/frameworks/bai2025embodiedsurvey.png",
+    "source": "https://arxiv.org/html/2512.22983v2/summary.png",
+    "caption": "Fig. 5: Overview of the taxonomy of learning-based Low-Level Action Modeling. It is organized into three components: Input Modeling, which specifies how multimodal inputs are represented and utilized; Latent Learning, which learns intermediate representations; and Policy Learning, which maps them to executable actions. Representative learning paradigms include reinforcement learning, imitation lea",
+    "bytes": 144744
+  },
+  "li2025omnimotion": {
+    "image": "/papers/frameworks/li2025omnimotion.png",
+    "source": "https://arxiv.org/html/2510.14954v1/framework.png",
+    "caption": "Figure 2: Framework overview. Our framework consists of three parts: (a) The input motion is encoded by an autoencoder to extract a latent code, producing the continuous motion tokens. (b) The motion tokens are masked and predicted in an autoregressive transformer with causal attention, producing conditions for DiTs to diffuse towards the target tokens.\n(c) Multimodal signals are encoded and then ",
+    "bytes": 151029
+  },
+  "qiu2025anigs": {
+    "image": "/papers/frameworks/qiu2025anigs.png",
+    "source": "https://arxiv.org/html/2412.02684v1/pipeline-12-1.png",
+    "caption": "Figure 2: Overview of the proposed AniGS.\nIn the first stage, a reference image-guided video generation model is employed to produce high-quality multi-view canonical human images along with their corresponding normals, based on the input image. In the second stage, a robust 3D model reconstruction method is applied, using 4D Gaussian Splatting (4DGS) optimization to handle subtle appearance varia",
+    "bytes": 440967
+  },
+  "li2025lamp": {
+    "image": "/papers/frameworks/li2025lamp.jpg",
+    "source": "https://aigc3d.github.io/LaMP/static/images/lamp.jpg",
+    "caption": "LaMP framework overview.",
+    "bytes": 232953
+  },
+  "zhu2024mcmat": {
+    "image": "/papers/frameworks/zhu2024mcmat.png",
+    "source": "https://arxiv.org/html/2412.14148v1/fig_pipeline2_01.png",
+    "caption": "Figure 2: Our method consists of a generation stage and a refinement stage. In the generation stage, the Multi-View Generation DiT (MG-DiT) model utilizes surface normal information from the 3D model as geometric conditions, reference images, and textual descriptions to generate multi-view-consistent PBR material properties. In the refinement stage, the Material Refinement DiT (MR-DiT) model perfo",
+    "bytes": 586726
+  },
+  "li2024mulsmo": {
+    "image": "/papers/frameworks/li2024mulsmo.png",
+    "source": "https://arxiv.org/html/2412.09901v2/framework.png",
+    "caption": "Figure 2: Overview of MulSMo. Our approach can take in various modalities as style signals, such as style motion sequences, texts, and images. We generate stylized human motions by combining content text 𝐜\\mathbf{c} with style signals 𝐬\\mathbf{s}. In the encoder part of the latent denoiser, we establish a bidirectional control flow between the generation network and the style network, utilizing re",
+    "bytes": 112199
+  },
+  "bai2026unifiedrobotmanipulation": {
+    "image": "/papers/frameworks/bai2026unifiedrobotmanipulation.svg",
+    "source": "https://arxiv.org/html/2510.10903v2/summary.svg",
+    "caption": "Overview of the survey taxonomy.",
+    "bytes": 798816
+  },
+  "li2023acmmm": {
+    "image": "/papers/frameworks/li2023acmmm.png",
+    "source": "User-provided image.png",
+    "caption": "ViP framework overview."
+  },
+  "li2024gpm": {
+    "image": "/papers/frameworks/li2024gpm.png",
+    "source": "https://openaccess.thecvf.com/content/CVPR2024/papers/Li_General_Point_Model_Pretraining_with_Autoencoding_and_Autoregressive_CVPR_2024_paper.pdf",
+    "page": 3,
+    "figure": 2,
+    "clip": [
+      48,
+      68,
+      551,
+      240
+    ],
+    "caption": "Method framework from Figure 2 of the paper."
+  },
+  "li2024mlip": {
+    "image": "/papers/frameworks/li2024mlip.png",
+    "source": "https://openaccess.thecvf.com/content/CVPR2024/papers/Li_MLIP_Enhancing_Medical_Visual_Representation_with_Divergence_Encoder_and_Knowledge-guided_CVPR_2024_paper.pdf",
+    "page": 4,
+    "figure": 2,
+    "clip": [
+      58,
+      68,
+      538,
+      380
+    ],
+    "caption": "Method framework from Figure 2 of the paper."
+  }
+}

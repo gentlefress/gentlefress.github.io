@@ -1,0 +1,82 @@
+/* Homepage research list. Keep colors aligned with the existing site theme. */
+.homepage {
+  --pub-link: #89612b;
+  --pub-muted: #64748b;
+  --pub-line: #e5e7eb;
+}
+.dark .homepage { --pub-link: #e4b976; --pub-muted: #a7b2c2; --pub-line: #334155; }
+.homepage-intro { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 64px; }
+.homepage-profile { min-width: 0; }
+.homepage-overview { min-width: 0; }
+.homepage-overview > section + section { margin-top: 36px; }
+.homepage-overview h2 { font-size: 28px; line-height: 1.25; }
+.homepage-overview #news { scroll-margin-top: 100px; }
+.homepage-overview #news > section > div {
+  max-height: 320px; padding: 0 12px 0 0; border: 0; border-radius: 0;
+  background: transparent;
+}
+.homepage-overview #news ul { padding: 0; }
+.homepage-overview #news li { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 16px; padding-bottom: 12px; }
+.homepage-overview #news li > span { width: auto; font-size: 13px; padding-top: 3px; }
+.homepage-overview #news li > div { font-size: 15px; line-height: 1.65; }
+.home-publications { margin-top: 64px; scroll-margin-top: 104px; color: var(--primary); }
+.pub-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; }
+.pub-heading h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 34px; font-weight: 700; letter-spacing: -.5px; }
+.pub-years { display: flex; gap: 18px; font-size: 14px; }
+.pub-years a { color: var(--pub-muted); text-decoration: none; }
+.pub-years a:hover { color: var(--pub-link); }
+.pub-intro { color: var(--pub-muted); font-size: 13px; margin: 8px 0 28px; line-height: 1.7; }
+.pub-year { scroll-margin-top: 104px; }
+.pub-year-heading { display: flex; align-items: center; gap: 18px; margin: 28px 0 6px; font-size: 15px; font-weight: 600; color: var(--pub-muted); font-variant-numeric: tabular-nums; }
+.pub-year-heading::after { content: ""; height: 1px; flex: 1; background: var(--pub-line); }
+.pub-row { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 32px; padding: 28px 0; align-items: center; }
+.pub-row + .pub-row { border-top: 1px solid var(--pub-line); }
+.pub-figure { display: block; aspect-ratio: 16 / 10; border: 1px solid #e7e8eb; border-radius: 8px; overflow: hidden; background: #fff; padding: 8px; transition: border-color .15s; }
+.pub-figure:hover { border-color: var(--accent); }
+.pub-figure img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.pub-info { min-width: 0; }
+.pub-title { margin: 0 0 8px; font-size: 18px; line-height: 1.45; font-weight: 650; }
+.pub-title a { color: var(--primary); text-decoration: none; }
+.pub-title a:hover { color: var(--pub-link); }
+.pub-authors { margin: 0 0 8px; font-size: 14px; line-height: 1.7; color: var(--pub-muted); }
+.pub-self { color: var(--pub-link); font-weight: 700; }
+.pub-equal { text-decoration: underline; text-underline-offset: 3px; }
+.pub-venue { margin: 0; font-size: 14px; line-height: 1.6; font-weight: 650; }
+.pub-note { margin: 4px 0 0; font-size: 13px; line-height: 1.6; color: var(--pub-link); }
+.pub-links { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; margin-top: 10px; font-size: 13px; }
+.pub-links a, .pub-citation summary { color: var(--pub-link); font-weight: 600; text-decoration: none; cursor: pointer; }
+.pub-links a:hover, .pub-citation summary:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pub-citation summary { list-style: none; }
+.pub-citation summary::-webkit-details-marker { display: none; }
+.pub-citation[open] { flex-basis: 100%; min-width: 0; }
+.pub-citation pre { margin-top: 12px; padding: 16px; border-radius: 6px; background: color-mix(in srgb, var(--primary) 5%, transparent); color: var(--primary); font-size: 12px; font-weight: 400; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 280px; overflow: auto; }
+.home-publications a:focus-visible, .pub-citation summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+.homepage-background { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; border-top: 1px solid var(--pub-line); margin-top: 40px; padding-top: 48px; }
+.homepage-background > section { min-width: 0; scroll-margin-top: 104px; }
+.homepage-background h1 { font-family: Georgia, "Times New Roman", serif; font-size: 28px; }
+.homepage-background .flex-1 > .justify-between { flex-direction: column; gap: 6px; margin-bottom: 8px; }
+@media (max-width: 1023px) {
+  .homepage-intro { grid-template-columns: 240px minmax(0, 1fr); gap: 32px; }
+  .homepage-profile > div { position: static; }
+  .homepage-profile > div > div:first-child { width: 220px; height: 220px; }
+  .pub-row { grid-template-columns: 210px minmax(0, 1fr); gap: 24px; }
+}
+@media (max-width: 767px) {
+  .homepage-intro { grid-template-columns: 1fr; gap: 40px; }
+  .homepage-profile { max-width: 360px; width: 100%; margin: 0 auto; }
+  .homepage-profile > div > div:first-child { width: 240px; height: 240px; }
+  .homepage-background { grid-template-columns: 1fr; }
+  .home-publications { margin-top: 44px; }
+  .pub-row { grid-template-columns: 170px minmax(0, 1fr); gap: 20px; }
+}
+@media (max-width: 540px) {
+  .pub-heading h2 { font-size: 30px; }
+  .pub-years { gap: 16px; }
+  .pub-row { grid-template-columns: 1fr; gap: 16px; padding: 24px 0; }
+  .pub-figure { aspect-ratio: 2 / 1; }
+  .pub-title { font-size: 17px; }
+  .pub-intro { margin-bottom: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pub-figure { transition: none; }
+}
