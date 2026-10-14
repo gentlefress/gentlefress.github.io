@@ -48,6 +48,17 @@ keeps its HTML and Flight data synchronized, and updates the CSS/JavaScript asse
 filenames and their references. Repeating the command leaves the output unchanged.
 Preview both direct page loads and navigation from another route before publishing.
 
+Lowercase omega (ω) uses the local `assets/fonts/homepage-greek.woff2` glyph subset
+of [Noto Sans Math](https://github.com/google/fonts/tree/main/ofl/notosansmath).
+Its SIL Open Font License is included alongside the font. The subset covers only
+U+03C9, so other characters retain the site's existing fonts.
+
+## CV
+
+The navigation opens [`Zhe_Li_CV.pdf`](Zhe_Li_CV.pdf) directly in a new tab using a
+native link. Replace that file to update the CV. The former `/cv/` page redirects
+to the PDF, and the old generated CV content is removed.
+
 ## WeChat contact
 
 The profile's WeChat icon opens the original QR image in a native dialog.

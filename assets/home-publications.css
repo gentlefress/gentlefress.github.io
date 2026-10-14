@@ -1,4 +1,14 @@
 /* Homepage research list. Keep colors aligned with the existing site theme. */
+/* A local math glyph keeps lowercase omega consistent across platform fonts. */
+@font-face {
+  font-family: "Homepage Greek";
+  src: url("/assets/fonts/homepage-greek.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+03C9;
+}
+.font-sans { font-family: "Homepage Greek", var(--font-sans); }
 .homepage {
   --pub-link: #89612b;
   --pub-muted: #64748b;
