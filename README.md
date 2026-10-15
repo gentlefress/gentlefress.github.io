@@ -16,7 +16,7 @@ Education and Experience follow the publication list. The navigation's
 Publications link points to `/#publications`; `/publications/` remains available
 with its searchable list.
 
-The current list contains 20 papers. The TCSS Tucker Fusion and ICASSP Lightweight
+The current list contains 21 papers. The TCSS Tucker Fusion and ICASSP Lightweight
 NeRF papers are omitted at the owner's request. ViP uses the owner's supplied
 framework image.
 

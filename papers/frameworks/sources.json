@@ -138,5 +138,11 @@
       380
     ],
     "caption": "Method framework from Figure 2 of the paper."
+  },
+  "li2027dcsnet": {
+    "image": "/papers/frameworks/li2027dcsnet.png",
+    "source": "https://arxiv.org/html/2402.02088v4/oframe.png",
+    "caption": "Figure 2: Overview of DCS-Net.",
+    "bytes": 110362
   }
 }
