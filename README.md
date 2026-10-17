@@ -9,9 +9,14 @@ http://localhost:8765. There is no npm build step in this repository.
 
 ## Publications and news
 
-The homepage displays News followed by Publications, grouped by year. Each paper
-has a framework figure, full author list, venue, contribution notes, and available
+The homepage displays News followed by Publications. Text links filter the list
+by research area; All Publications is the default, and each view retains the
+existing year grouping and paper order. Categories have shareable URLs such as
+`/#publications-humanoid-robotics`, and browser Back/Forward restores the filter.
+Each paper has a framework figure, full author list, venue, contribution notes, and available
 paper/project/code/DOI links. BibTeX expands inline; figures open at full size.
+Figure frames share a fixed 16:10 aspect ratio and equal dimensions at each screen
+size. The full diagrams fit within the frames without cropping or stretching.
 Education and Experience follow the publication list. The navigation's
 Publications link points to `/#publications`; `/publications/` remains available
 with its searchable list.
@@ -37,6 +42,9 @@ Changed JavaScript chunks use new filenames so browsers load the updated code.
 - [`papers/frameworks/sources.json`](papers/frameworks/sources.json) maps paper IDs
   to local figure files and records the original image or PDF source. Add a figure
   entry for each new publication.
+- [`papers/categories.json`](papers/categories.json) defines category labels and
+  paper membership. A paper may appear in multiple categories. Assign each new
+  paper to at least one category; the generator checks for missing or unknown IDs.
 - [`assets/home-publications.css`](assets/home-publications.css) defines the layout
   for desktop, mobile, and dark mode.
 - [`scripts/homepage-component.js`](scripts/homepage-component.js) contains the

@@ -1,0 +1,39 @@
+[
+  {
+    "id": "humanoid-robotics",
+    "label": "Humanoid Robotics",
+    "papers": [
+      "li2026robodreamer", "li2026omega0latentpredictiveworld", "yuan2026roboforge",
+      "sun2026mosaic", "li2025robomirror", "li2026freestyle", "li2026language2loco"
+    ]
+  },
+  {
+    "id": "embodied-ai",
+    "label": "Embodied AI",
+    "papers": [
+      "bai2026unifiedrobotmanipulation", "li2026omega0latentpredictiveworld",
+      "shan2026learningphysicalinteractionsurvey", "bai2026latentvla",
+      "tan2026robobrain", "bai2025embodiedsurvey"
+    ]
+  },
+  {
+    "id": "motion-generation",
+    "label": "Motion Generation",
+    "papers": ["li2024mulsmo", "li2025omnimotion", "li2025lamp"]
+  },
+  {
+    "id": "3d-vision",
+    "label": "3D Vision",
+    "papers": ["li2027dcsnet", "qiu2025anigs", "zhu2024mcmat", "li2024gpm"]
+  },
+  {
+    "id": "multimodal-learning",
+    "label": "Multimodal Learning",
+    "papers": ["li2025lamp", "li2024mlip", "li2023acmmm"]
+  },
+  {
+    "id": "surveys",
+    "label": "Surveys",
+    "papers": ["bai2026unifiedrobotmanipulation", "shan2026learningphysicalinteractionsurvey", "bai2025embodiedsurvey"]
+  }
+]

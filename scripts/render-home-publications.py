@@ -35,11 +35,25 @@ def venue(paper):
     return (acronym[1] if acronym else full), full
 
 
-def render(papers, figures):
+def render(papers, figures, categories):
+    membership = {paper['id']: [] for paper in papers}
+    category_ids = set()
+    for category in categories:
+        category_id = category['id']
+        assert re.fullmatch(r'[a-z0-9-]+', category_id) and category_id != 'all'
+        assert category_id not in category_ids and category['papers'], category_id
+        category_ids.add(category_id)
+        for paper_id in category['papers']:
+            assert paper_id in membership, f'Unknown paper in categories: {paper_id}'
+            assert category_id not in membership[paper_id], f'Duplicate category: {paper_id}'
+            membership[paper_id].append(category_id)
+    assert all(membership.values()), 'Assign every publication to at least one category.'
     years = sorted({paper['year'] for paper in papers}, reverse=True)
-    links = ''.join(f'<a href="#publications-{year}">{year}</a>' for year in years)
-    parts = [f'<div class="pub-heading"><h2 id="publications-heading">Publications</h2><nav class="pub-years" aria-label="Publication years">{links}</nav></div>',
-             f'<p class="pub-intro">{len(papers)} papers · {min(years)}–{max(years)}. <span>Underlined authors: equal contribution.</span></p>']
+    links = '<a href="#publications" data-pub-filter="all" aria-current="true">All Publications</a>'
+    links += ''.join(f'<a href="#publications-{category["id"]}" data-pub-filter="{category["id"]}">{escape(category["label"])}</a>' for category in categories)
+    parts = ['<div class="pub-heading"><h2 id="publications-heading">Publications</h2></div>',
+             f'<nav class="pub-filters" aria-label="Publication categories">{links}</nav>',
+             f'<p class="pub-intro"><span class="pub-count" aria-live="polite" aria-atomic="true">{len(papers)} papers</span> · <span>Underlined authors: equal contribution.</span></p>']
     for year in years:
         parts.append(f'<section class="pub-year" id="publications-{year}" aria-labelledby="publications-year-{year}"><h3 class="pub-year-heading" id="publications-year-{year}">{year}</h3>')
         for paper in (p for p in papers if p['year'] == year):
@@ -49,7 +63,8 @@ def render(papers, figures):
             figure = figures[paper['id']]
             image_path = figure['image']
             assert image_path.startswith('/papers/frameworks/') and (ROOT / image_path[1:]).is_file(), image_path
-            parts.append(f'<article class="pub-row" id="pub-{escape(paper["id"])}"><a class="pub-figure" href="{escape(image_path)}" target="_blank" rel="noopener noreferrer" aria-label="View framework figure: {title}"><img src="{escape(image_path)}" alt="Framework overview for {title}" loading="lazy" decoding="async" width="800" height="500"/></a><div class="pub-info"><h4 class="pub-title"><a href="{external_url(title_url)}" target="_blank" rel="noopener noreferrer">{title}</a></h4>')
+            tags = ' '.join(membership[paper['id']])
+            parts.append(f'<article class="pub-row" id="pub-{escape(paper["id"])}" data-pub-categories="{tags}"><a class="pub-figure" href="{escape(image_path)}" target="_blank" rel="noopener noreferrer" aria-label="View framework figure: {title}"><img src="{escape(image_path)}" alt="Framework overview for {title}" loading="lazy" decoding="async" width="800" height="500"/></a><div class="pub-info"><h4 class="pub-title"><a href="{external_url(title_url)}" target="_blank" rel="noopener noreferrer">{title}</a></h4>')
             authors = []
             for author in paper['authors']:
                 name = escape(author['name'])
@@ -106,7 +121,8 @@ def update_flight(text, markup):
 def main():
     papers = publication_data()
     figures = json.loads((ROOT / 'papers/frameworks/sources.json').read_text())
-    markup = render(papers, figures)
+    categories = json.loads((ROOT / 'papers/categories.json').read_text())
+    markup = render(papers, figures, categories)
     path = ROOT / 'index.html'
     source = path.read_text()
     block = START + '<section id="publications" class="home-publications" aria-labelledby="publications-heading">' + markup + '</section>' + END
